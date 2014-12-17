@@ -74,8 +74,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\Common\CryptoHelper.cs" />
+    <Compile Include="EntityFramework\Models\Bid.cs" />
+    <Compile Include="EntityFramework\Models\BrandType.cs" />
+    <Compile Include="EntityFramework\Models\Car.cs" />
+    <Compile Include="EntityFramework\Models\CarType.cs" />
+    <Compile Include="EntityFramework\Models\Consumer.cs" />
+    <Compile Include="EntityFramework\Models\Driver.cs" />
+    <Compile Include="EntityFramework\Models\Location.cs" />
+    <Compile Include="EntityFramework\Models\Order.cs" />
+    <Compile Include="EntityFramework\Models\User.cs" />
     <Compile Include="EntityFramework\TaxiAppDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\TaxiAppRepositoryBase.cs" />
+    <Compile Include="Migrations\201412171127260_InitialCreate.cs" />
+    <Compile Include="Migrations\201412171127260_InitialCreate.Designer.cs">
+      <DependentUpon>201412171127260_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaxiAppDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +103,11 @@
       <Project>{17298EA0-AF73-4F30-B6F1-2066100D7D74}</Project>
       <Name>TaxiApp.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412171127260_InitialCreate.resx">
+      <DependentUpon>201412171127260_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

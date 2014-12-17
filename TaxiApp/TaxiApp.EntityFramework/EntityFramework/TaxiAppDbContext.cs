@@ -1,4 +1,6 @@
 ﻿using Abp.EntityFramework;
+using System.Data.Entity;
+using TaxiApp.EntityFramework.Models;
 
 namespace TaxiApp.EntityFramework
 {
@@ -8,6 +10,10 @@ namespace TaxiApp.EntityFramework
 
         //Example:
         //public virtual IDbSet<User> Users { get; set; }
+        public virtual IDbSet<Driver> Drivers { get; set; }
+        public virtual IDbSet<Order> Orders { get; set; }
+        public virtual IDbSet<Bid> Bids { get; set; }
+        public virtual IDbSet<BrandType> BrandTypes { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
