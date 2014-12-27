@@ -5,8 +5,12 @@ namespace TaxiApp.Migrations
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using TaxiApp.Account;
+    using TaxiApp.Bids;
+    using TaxiApp.Cars;
+    using TaxiApp.Drivers;
     using TaxiApp.EntityFramework.Common;
-    using TaxiApp.EntityFramework.Models;
+    using TaxiApp.Orders;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TaxiApp.EntityFramework.TaxiAppDbContext>
     {

@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Account
 {
     public abstract class User : Entity<int>
     {

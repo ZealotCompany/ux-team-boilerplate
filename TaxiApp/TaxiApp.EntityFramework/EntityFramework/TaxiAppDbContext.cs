@@ -1,6 +1,9 @@
 ﻿using Abp.EntityFramework;
 using System.Data.Entity;
-using TaxiApp.EntityFramework.Models;
+using TaxiApp.Bids;
+using TaxiApp.Cars;
+using TaxiApp.Drivers;
+using TaxiApp.Orders;
 
 namespace TaxiApp.EntityFramework
 {

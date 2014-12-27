@@ -2,8 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaxiApp.Drivers;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Bids
 {
     public class Bid : Entity<long>
     {

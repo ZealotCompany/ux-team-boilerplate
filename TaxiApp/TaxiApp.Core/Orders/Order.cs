@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaxiApp.Account;
+using TaxiApp.Bids;
+using TaxiApp.Cars;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Orders
 {
     public enum ServiceType
     {
@@ -28,8 +31,8 @@ namespace TaxiApp.EntityFramework.Models
         public virtual User.GenderType Gender { get; set; }
 
         public virtual int DriverExperience { get; set; }
-
-        public virtual Car CarType { get; set; }
+                            
+        public virtual Car CarDetails { get; set; }
 
         [ForeignKey("ChosenBidId")]
         public virtual Bid ChosenBid { get; set; }

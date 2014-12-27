@@ -75,15 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFramework\Common\CryptoHelper.cs" />
-    <Compile Include="EntityFramework\Models\Bid.cs" />
-    <Compile Include="EntityFramework\Models\BrandType.cs" />
-    <Compile Include="EntityFramework\Models\Car.cs" />
-    <Compile Include="EntityFramework\Models\CarType.cs" />
-    <Compile Include="EntityFramework\Models\Consumer.cs" />
-    <Compile Include="EntityFramework\Models\Driver.cs" />
-    <Compile Include="EntityFramework\Models\Location.cs" />
-    <Compile Include="EntityFramework\Models\Order.cs" />
-    <Compile Include="EntityFramework\Models\User.cs" />
+    <Compile Include="EntityFramework\Repositories\OrdersRepository.cs" />
     <Compile Include="EntityFramework\TaxiAppDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\TaxiAppRepositoryBase.cs" />
     <Compile Include="Migrations\201412171127260_InitialCreate.cs" />

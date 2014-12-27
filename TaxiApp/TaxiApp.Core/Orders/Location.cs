@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Orders
 {
     [ComplexType]
     public class Location
