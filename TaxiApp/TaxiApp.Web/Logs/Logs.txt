@@ -1299,3 +1299,18 @@ TaxiApp.Orders.Dtos.MakeOrderInput
    at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
    at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
    at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+DEBUG 2014-12-27 15:50:06,742 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2014-12-27 15:50:09,930 [1    ] Abp.Modules.DefaultModuleFinder          - Found 11 ABP modules in total.
+DEBUG 2014-12-27 15:50:09,938 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=0.4.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,940 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpCoreModule, Abp, Version=0.4.4.2, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=0.4.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=0.4.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,941 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=0.4.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,942 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=0.4.4.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,942 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TaxiApp.TaxiAppApplicationModule, TaxiApp.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,942 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TaxiApp.TaxiAppCoreModule, TaxiApp.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,942 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TaxiApp.TaxiAppDataModule, TaxiApp.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,943 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TaxiApp.Web.TaxiAppWebModule, TaxiApp.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,943 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: TaxiApp.TaxiAppWebApiModule, TaxiApp.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2014-12-27 15:50:09,946 [1    ] Abp.Modules.AbpModuleManager             - 11 modules loaded.
+DEBUG 2014-12-27 15:50:12,936 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 0 classes defines auto mapping attributes

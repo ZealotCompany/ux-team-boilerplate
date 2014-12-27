@@ -18,6 +18,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Log files
+Logs/
+
 # Roslyn cache directories
 *.ide/
 
