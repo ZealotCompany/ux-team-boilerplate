@@ -11,7 +11,8 @@ namespace TaxiApp.EntityFramework.Repositories
     {
         public void MakeOrder(Order order)
         {
-            Context.Orders.Add(order);
+            Order newOrder = base.Insert(order);
+            Context.SaveChanges();
         }
     }
 }

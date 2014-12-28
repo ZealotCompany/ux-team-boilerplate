@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaxiApp.Orders.Dtos
+namespace TaxiApp.Cars.Dtos
 {
-    public class MakeOrderInput : IInputDto
+    public class CarTypeDto : EntityDto<int>
     {
-        public OrderDto Order { get; set; }
-
-        
+        public string Name { get; set; }
     }
 }

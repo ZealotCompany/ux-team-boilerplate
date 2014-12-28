@@ -1,10 +1,12 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TaxiApp.Account;
 using TaxiApp.Orders.Dtos;
+using TaxiApp.Mapping;
 
 namespace TaxiApp.Orders
 {
@@ -19,29 +21,16 @@ namespace TaxiApp.Orders
 
         public MakeOrderOutput MakeOrder(MakeOrderInput input)
         {
-            Order order = AutoMapper.Mapper.Map<MakeOrderInput, Order>(input);
-            //Order order = new Order()
-            //{
-            //    LocationFrom = new Location()
-            //    {
-            //        Place = input.LocationFrom
-            //    },
-            //    LocationTo = new Location()
-            //    {
-            //        Place = input.LocationTo
-            //    },
-            //    Gender = input.Gender == Account.Dtos.UserDto.GenderTypeDto.Male ? 
-            //                    User.GenderType.Male :
-            //                    User.GenderType.Female
-
-            //};
-
+            Order order = input.Order.MapTo<Order>();
+            
             _ordersRepository.MakeOrder(order);
             
-            return new MakeOrderOutput()
-            {
-                Success = true
-            };
+            return new MakeOrderOutput() { Success = true };
+        }
+
+        public GetAllOrdersOutput GetAllOrders()
+        {
+            return new GetAllOrdersOutput() { Orders = _ordersRepository.GetAllList().MapIList<Order, OrderDto>() };
         }
     }
 }

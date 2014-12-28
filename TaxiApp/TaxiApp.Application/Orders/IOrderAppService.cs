@@ -11,5 +11,7 @@ namespace TaxiApp.Orders
     public interface IOrderAppService : IApplicationService
     {
         MakeOrderOutput MakeOrder(MakeOrderInput input);
+
+        GetAllOrdersOutput GetAllOrders();
     }
 }

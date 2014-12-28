@@ -30,7 +30,7 @@ namespace TaxiApp.Application.Test
         {
             try
             {
-                Mapper.CreateMap<Order, MakeOrderOutput>();
+                DtoMappings.Map();
                 Mapper.AssertConfigurationIsValid();
             }
             catch (AutoMapperConfigurationException exp)
@@ -38,6 +38,38 @@ namespace TaxiApp.Application.Test
                 Console.WriteLine(exp);
             }
 
+            OrderDto orderDto = new OrderDto()
+            {
+                LocationFrom = new LocationDto()
+                {
+                    Place = "Baku"
+                },
+                LocationTo = new LocationDto()
+                {
+                    Place = "Masazir"
+                },
+                Gender = User.GenderType.Male,
+                DriverExperience = 2,
+                ServiceType = ServiceType.Standard,
+                OrderDate = DateTime.Now,
+                SuggestedPrice = 10.0m,
+                CarDetails = new Cars.Dtos.CarDto()
+                {
+                    BrandType = new Cars.Dtos.BrandTypeDto()
+                    {
+                        Name = "BMW"
+                    },
+                    CarType = new Cars.Dtos.CarTypeDto()
+                    {
+                        Name = "Jeep"
+                    },
+                    ProductionYear = 2010
+                }
+            };
+
+            Order order = Mapper.Map<Order>(orderDto);
+
+            Console.WriteLine("Hello");
         }
     }
 }

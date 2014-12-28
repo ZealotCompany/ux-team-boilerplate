@@ -8,7 +8,7 @@
         <input type="number" name="suggestedPrice" placeholder="Suggested Price" ng-model="suggestedPrice" />
 
         <select ng-options="genderType.name for genderType in genderOptions" ng-model="selectedGender" />
-        <select ng-options="carType.name for carType in carTypeOptions" ng-model="selectedCarType" />
+        <select ng-options="carType.name for carType in carTypeOptions" ng-model="selectedCarType.name" />
         <input type="number" name="driverExperiance" placeholder="Driver Experiance" ng-model="driverExperiance" />
     </div>
     <button ng-click="makeOrder()">Make Order</button>

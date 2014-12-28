@@ -3,6 +3,7 @@ using Abp.Application.Services;
 using Abp.Modules;
 using Abp.WebApi;
 using Abp.WebApi.Controllers.Dynamic.Builders;
+using TaxiApp.Orders;
 
 namespace TaxiApp
 {
@@ -13,9 +14,19 @@ namespace TaxiApp
         {
             IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
 
+            //DynamicApiControllerBuilder
+            //    .ForAll<IApplicationService>(typeof(TaxiAppApplicationModule).Assembly, "app")
+            //    .Build();
+
+            CreateWebApiProxiesForServices();
+        }
+
+        private static void CreateWebApiProxiesForServices()
+        {
             DynamicApiControllerBuilder
-                .ForAll<IApplicationService>(typeof(TaxiAppApplicationModule).Assembly, "app")
+                .For<IOrderAppService>("taxiapp/order")
                 .Build();
+
         }
     }
 }

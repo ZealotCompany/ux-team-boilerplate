@@ -28,19 +28,29 @@
                     name: "Mersedec"
                 }
             ];
-            $scope.selectedCarType = $scope.carTypeOptions[0].name;
+            $scope.selectedCarType = $scope.carTypeOptions[0];
 
             $scope.successOrder = false;
             console.log($scope.successOrder);
             $scope.makeOrder = function () {
                 var newOrderData = {
-                    locationFrom: $scope.locationFrom,
-                    locationTo: $scope.locationTo,
-                    orderDate: $scope.orderDate,
-                    driverExperiance: $scope.driverExperiance,
-                    suggestedPrice: $scope.suggestedPrice,
-                    carType: $scope.selectedCarType,
-                    gender: $scope.selectedGender
+                    order: {
+                        locationFrom: {
+                            place: $scope.locationFrom
+                        },
+                        locationTo: {
+                            place: $scope.locationTo
+                        },
+                        orderDate: $scope.orderDate,
+                        driverExperiance: $scope.driverExperiance,
+                        suggestedPrice: $scope.suggestedPrice,
+                        carDetails: {
+                            carType: {
+                                name: "BMW"
+                            }
+                        },
+                        gender: $scope.selectedGender
+                    }
                 };
 
                 console.log(newOrderData);
