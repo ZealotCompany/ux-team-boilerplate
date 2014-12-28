@@ -2,8 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using TaxiApp.Account;
+using TaxiApp.Cars;
+using TaxiApp.Orders;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Drivers
 {
     public class Driver : User
     {
@@ -22,7 +25,7 @@ namespace TaxiApp.EntityFramework.Models
 
         public Driver()
         {
-            this.ServiceType = Models.ServiceType.Standard;
+            this.ServiceType = ServiceType.Standard;
             this.Experience = 0;
         }
     }

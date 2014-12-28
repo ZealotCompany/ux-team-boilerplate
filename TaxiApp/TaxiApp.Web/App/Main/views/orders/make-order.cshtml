@@ -1,0 +1,16 @@
+﻿<div class="container" ng-controller="app.views.orders as vm">
+    <div>
+        <input type="text" name="locationFrom" value="Azadliq Metro" placeholder="From Location" ng-model="locationFrom" />
+        <input type="text" name="locationTo" value="28 Mall" placeholder="To Location" ng-model="locationTo" />
+        <input type="date" name="orderDate" value="" placeholder="Order Date" ng-model="orderDate" />
+    </div>
+    <div>
+        <input type="number" name="suggestedPrice" placeholder="Suggested Price" ng-model="suggestedPrice" />
+
+        <select ng-options="genderType.name for genderType in genderOptions" ng-model="selectedGender" />
+        <select ng-options="carType.name for carType in carTypeOptions" ng-model="selectedCarType.name" />
+        <input type="number" name="driverExperiance" placeholder="Driver Experiance" ng-model="driverExperiance" />
+    </div>
+    <button ng-click="makeOrder()">Make Order</button>
+    <h1 ng-show="successOrder">Order Made Successfully!!!</h1>
+</div>

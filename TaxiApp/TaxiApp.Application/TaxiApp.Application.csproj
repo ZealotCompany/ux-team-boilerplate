@@ -73,6 +73,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cars\Dtos\BrandTypeDto.cs" />
+    <Compile Include="Cars\Dtos\CarDto.cs" />
+    <Compile Include="Cars\Dtos\CarTypeDto.cs" />
+    <Compile Include="DtoMappings.cs" />
+    <Compile Include="Mapping\AutoMapExtensions.cs" />
+    <Compile Include="Orders\Dtos\GetAllOrdersOutput.cs" />
+    <Compile Include="Orders\Dtos\LocationDto.cs" />
+    <Compile Include="Orders\Dtos\MakeOrderInput.cs" />
+    <Compile Include="Orders\Dtos\OrderDto.cs" />
+    <Compile Include="Orders\IOrderAppService.cs" />
+    <Compile Include="Orders\Dtos\MakeOrderOutput.cs" />
+    <Compile Include="Orders\OrderAppService.cs" />
     <Compile Include="TaxiAppApplicationModule.cs" />
     <Compile Include="TaxiAppAppServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,7 +99,9 @@
       <Name>TaxiApp.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Account\Dtos\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using TaxiApp.Account;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Customers
 {
     public class Consumer : User
     {

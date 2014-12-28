@@ -62,6 +62,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bids\Bid.cs" />
+    <Compile Include="Cars\BrandType.cs" />
+    <Compile Include="Cars\Car.cs" />
+    <Compile Include="Cars\CarType.cs" />
+    <Compile Include="Customers\Consumer.cs" />
+    <Compile Include="Drivers\Driver.cs" />
+    <Compile Include="Orders\Location.cs" />
+    <Compile Include="Orders\Order.cs" />
+    <Compile Include="Account\User.cs" />
+    <Compile Include="Orders\IOrdersRepository.cs" />
     <Compile Include="TaxiAppConsts.cs" />
     <Compile Include="TaxiAppCoreModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +80,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

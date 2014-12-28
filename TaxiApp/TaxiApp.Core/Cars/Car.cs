@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
-namespace TaxiApp.EntityFramework.Models
+namespace TaxiApp.Cars
 {
     public class Car : Entity<int>
     {
