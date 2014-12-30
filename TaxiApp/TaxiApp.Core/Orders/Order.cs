@@ -38,5 +38,11 @@ namespace TaxiApp.Orders
         public virtual Bid ChosenBid { get; set; }
 
         public virtual long? ChosenBidId { get; set; }
+
+
+        public Order()
+        {
+            this.ServiceType = Orders.ServiceType.Standard;
+        }
     }
 }
