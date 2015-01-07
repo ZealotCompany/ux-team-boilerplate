@@ -78,13 +78,9 @@
     <Compile Include="EntityFramework\Repositories\OrdersRepository.cs" />
     <Compile Include="EntityFramework\TaxiAppDbContext.cs" />
     <Compile Include="EntityFramework\Repositories\TaxiAppRepositoryBase.cs" />
-    <Compile Include="Migrations\201412171127260_InitialCreate.cs" />
-    <Compile Include="Migrations\201412171127260_InitialCreate.Designer.cs">
-      <DependentUpon>201412171127260_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201412281154004_EntitiesReplaced.cs" />
-    <Compile Include="Migrations\201412281154004_EntitiesReplaced.Designer.cs">
-      <DependentUpon>201412281154004_EntitiesReplaced.cs</DependentUpon>
+    <Compile Include="Migrations\201501071113194_InitialCreate.cs" />
+    <Compile Include="Migrations\201501071113194_InitialCreate.Designer.cs">
+      <DependentUpon>201501071113194_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaxiAppDataModule.cs" />
@@ -101,11 +97,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201412171127260_InitialCreate.resx">
-      <DependentUpon>201412171127260_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201412281154004_EntitiesReplaced.resx">
-      <DependentUpon>201412281154004_EntitiesReplaced.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201501071113194_InitialCreate.resx">
+      <DependentUpon>201501071113194_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

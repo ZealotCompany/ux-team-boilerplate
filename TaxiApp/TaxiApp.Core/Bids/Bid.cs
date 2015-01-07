@@ -8,6 +8,29 @@ namespace TaxiApp.Bids
 {
     public class Bid : Entity<long>
     {
+        public enum BidState 
+        {
+            /// <summary>
+            /// Used when the driver made a bid and the order is open for bids
+            /// </summary>
+            Open,
+
+            /// <summary>
+            /// When the Driver removes the order from the orders list
+            /// </summary>
+            Removed,
+
+            /// <summary>
+            /// When the Bid was not accepted by the consumer
+            /// </summary>
+            Closed,
+
+            /// <summary>
+            /// The bid was accepted by the consumer
+            /// </summary>
+            Accepted
+        }
+
         public virtual long? OrderId { get; set; }
         
         public virtual int? DriverId { get; set; }
@@ -16,5 +39,7 @@ namespace TaxiApp.Bids
         public virtual Driver Driver { get; set; }
         
         public virtual decimal Price { get; set; }
+
+        public virtual BidState State { get; set; }
     }
 }

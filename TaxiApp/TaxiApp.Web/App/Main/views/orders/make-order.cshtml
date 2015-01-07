@@ -1,16 +1,114 @@
 ﻿<div class="container" ng-controller="app.views.orders as vm">
-    <div>
-        <input type="text" name="locationFrom" value="Azadliq Metro" placeholder="From Location" ng-model="locationFrom" />
-        <input type="text" name="locationTo" value="28 Mall" placeholder="To Location" ng-model="locationTo" />
-        <input type="date" name="orderDate" value="" placeholder="Order Date" ng-model="orderDate" />
+    <div class="container jumbotron">
+        <h1>Get Taxi</h1>
+        <p>Welcome to Get Taxi App! The most easy and cheap way to get a taxi</p>
     </div>
-    <div>
-        <input type="number" name="suggestedPrice" placeholder="Suggested Price" ng-model="suggestedPrice" />
+    <form name="orderForm" class="form-horizontal" role="form">
 
-        <select ng-options="genderType.name for genderType in genderOptions" ng-model="selectedGender" />
-        <select ng-options="carType.name for carType in carTypeOptions" ng-model="selectedCarType.name" />
-        <input type="number" name="driverExperiance" placeholder="Driver Experiance" ng-model="driverExperiance" />
-    </div>
-    <button ng-click="makeOrder()">Make Order</button>
-    <h1 ng-show="successOrder">Order Made Successfully!!!</h1>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                        </span>
+                        <input required type="text" class="form-control" name="locationFrom" value="Azadliq Metro" placeholder="From Location" ng-model="locationFrom" />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input required type="text" class="form-control" name="locationTo" value="28 Mall" placeholder="To Location" ng-model="locationTo" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" >
+            <div class="form-group">
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <select class="form-control" ng-change="dateOptionChanged(orderDateType)" ng-options="orderDateType.name for orderDateType in orderDateOptions" ng-model="selectedOrderDateType" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class='col-md-3' ng-show="showOrderDateTimePicker">
+                    <div class='input-group date' id='datetimepicker5'>
+                        <input type='text' class="form-control" data-date-format="YYYY/MM/DD" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker5').datetimepicker({
+                            pickTime: false,
+                            showToday: true
+                        });
+                    });
+                </script>
+                <div class='col-md-2' ng-show="showOrderDateTimePicker">
+                    <div class='input-group date' id='datetimepicker4'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker4').datetimepicker({
+                            format: 'HH:mm',
+                            pickDate: false,
+                            showToday: true
+                        });
+                    });
+                </script>
+                <div class="col-md-2 pull-right">
+                    <button class="btn btn-primary" ng-click="makeOrder()" ng-disabled="orderForm.$invalid">Make Order</button>
+                </div>
+            </div>
+            
+        </div>
+        
+
+        <div ng-show="hideAdditionalSearch">
+            <p ng-click="showAdditionalOptions()" class="btn-link">Show Additional Options</p>
+        </div>
+        <div ng-hide="hideAdditionalSearch">
+            <p ng-click="hideAdditionalOptions()" class="btn-link">Hide Additional Options</p>
+        </div>
+        <div class="row" ng-hide="hideAdditionalSearch">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Suggested Price:</label>
+                <div class="col-md-10">
+                    <input type="number" class="form-control" name="suggestedPrice" placeholder="Suggested Price" ng-model="suggestedPrice" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Gender:</label>
+                <div class="col-md-10">
+                    <select class="form-control" ng-options="genderType.name for genderType in genderOptions" ng-model="selectedGender" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">Driver Experiance:</label>
+                <div class="col-md-10">
+                    <input type="number" class="form-control" name="driverExperiance" placeholder="Driver Experiance" ng-model="driverExperiance" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">VIP Service</label>
+                <input class="checkbox-inline" type="checkbox" name="vipservice" value="" />
+            </div>
+        </div>
+
+        <div class="row" ng-show="successOrder">
+            <h1>Order Made Successfully!!!</h1>
+        </div>
+    </form>
 </div>

@@ -16,7 +16,7 @@ namespace TaxiApp.Drivers
 
         public virtual string LicenseNumber { get; set; }
 
-        public virtual ServiceType ServiceType { get; set; }
+        public virtual Cars.CarType ServiceType { get; set; }
 
         public virtual int CarId { get; set; }
 
@@ -25,7 +25,7 @@ namespace TaxiApp.Drivers
 
         public Driver()
         {
-            this.ServiceType = ServiceType.Standard;
+            this.ServiceType = Cars.CarType.Taxi;
             this.Experience = 0;
         }
     }

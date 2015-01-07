@@ -9,19 +9,18 @@ namespace TaxiApp.Cars
 {
     public class Car : Entity<int>
     {
+        public static readonly int MinimalProductionYear = 1990;
+
         public virtual int? BrandTypeId { get; set; }
 
         [ForeignKey("BrandTypeId")]
-        public virtual BrandType BrandType { get; set; }
+        public virtual CarBrand BrandType { get; set; }
 
-        public virtual int? CarTypeId { get; set; }
-
-        [ForeignKey("CarTypeId")]
         public virtual CarType CarType { get; set; }
 
         public virtual int ProductionYear { get; set; }
 
         public virtual string ImageUrl { get; set; }
-
+        
     }
 }

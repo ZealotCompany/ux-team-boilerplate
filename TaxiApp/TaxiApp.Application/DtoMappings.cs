@@ -17,9 +17,10 @@ namespace TaxiApp
         public static void Map()
         {
             //This code configures AutoMapper to auto map between Entities and DTOs.
-            Mapper.CreateMap<OrderDto, Order>().ReverseMap();
+            Mapper.CreateMap<Order, OrderDto>().ReverseMap();
+
             Mapper.CreateMap<CarDto, Car>().ReverseMap();
-            Mapper.CreateMap<BrandTypeDto, BrandType>().ReverseMap();
+            Mapper.CreateMap<BrandTypeDto, CarBrand>().ReverseMap();
             Mapper.CreateMap<CarTypeDto, CarType>().ReverseMap();
             Mapper.CreateMap<LocationDto, Location>().ReverseMap();
             //I specified mapping for AssignedPersonId since NHibernate does not fill Task.AssignedPersonId

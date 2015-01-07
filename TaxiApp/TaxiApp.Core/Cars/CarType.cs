@@ -6,8 +6,20 @@ using System.Text;
 
 namespace TaxiApp.Cars
 {
-    public class CarType : Entity<int>
+    public enum CarType
     {
-        public virtual string Name { get; set; }
+        Taxi = 0,
+
+        Friend = 1,
+
+        SmallTrack = 2,
+
+        MediumTrack = 3,
+
+        Minibus = 4,
+
+        Bus = 5,
+
+        VIP = 6
     }
 }

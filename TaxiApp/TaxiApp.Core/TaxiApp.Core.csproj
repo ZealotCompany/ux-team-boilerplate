@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bids\Bid.cs" />
-    <Compile Include="Cars\BrandType.cs" />
+    <Compile Include="Cars\CarBrand.cs" />
     <Compile Include="Cars\Car.cs" />
     <Compile Include="Cars\CarType.cs" />
     <Compile Include="Customers\Consumer.cs" />

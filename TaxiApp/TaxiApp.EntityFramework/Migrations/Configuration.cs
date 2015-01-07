@@ -24,50 +24,25 @@ namespace TaxiApp.Migrations
         {
             // This method will be called every time after migrating to the latest version.
             // You can add any seed data here...
-            var brands = new List<BrandType>()
+            var brands = new List<CarBrand>()
             {
-                new BrandType()
+                new CarBrand()
                 {
                     Id = 1,
                     Name = "BMW"
                 },
-                new BrandType()
+                new CarBrand()
                 {
                     Id = 2,
                     Name = "Lada"
                 },
-                new BrandType()
+                new CarBrand()
                 {
                     Id = 3,
                     Name = "Mercedes"
                 }
             };
-            context.BrandTypes.AddOrUpdate(brand => brand.Name, brands.ToArray());
-
-            var cartypes = new List<CarType>()
-            {
-                new CarType()
-                {
-                    Id = 1,
-                    Name = "Sedan"
-                },
-                new CarType()
-                {
-                    Id = 2,
-                    Name = "Jeep"
-                },
-                new CarType()
-                {
-                    Id = 3,
-                    Name = "SmallTruck"
-                },
-                new CarType()
-                {
-                    Id = 4,
-                    Name = "MediumTrack"
-                }
-            };
-            context.CarTypes.AddOrUpdate(cartype => cartype.Name, cartypes.ToArray());
+            context.CarBrands.AddOrUpdate(brand => brand.Name, brands.ToArray());
 
             var cars = new List<Car>()
             {
@@ -75,7 +50,7 @@ namespace TaxiApp.Migrations
                 {
                     Id = 1,
                     BrandTypeId = brands[0].Id,
-                    CarTypeId = cartypes[1].Id,
+                    CarType = Cars.CarType.Taxi,
                     ImageUrl = "http://bmw.test.com",
                     ProductionYear = 2009
                 },
@@ -83,7 +58,7 @@ namespace TaxiApp.Migrations
                 {
                     Id = 2,
                     BrandTypeId = brands[1].Id,
-                    CarTypeId = cartypes[1].Id,
+                    CarType = Cars.CarType.Minibus,
                     ImageUrl = "http://lada.test.com",
                     ProductionYear = 2006
                 }

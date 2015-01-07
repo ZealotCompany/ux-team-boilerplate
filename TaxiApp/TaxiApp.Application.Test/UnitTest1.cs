@@ -19,7 +19,7 @@ namespace TaxiApp.Application.Test
         }
 
         [TestMethod]
-        public void TestOrderMapping()
+        public void TestMappingFromFullOrderDtoToOrder()
         {
             OrderDto orderDto = new OrderDto()
             {
@@ -33,26 +33,23 @@ namespace TaxiApp.Application.Test
                 },
                 Gender = User.GenderType.Male,
                 DriverExperience = 2,
-                ServiceType = ServiceType.Standard,
+                ServiceType = Cars.CarType.Taxi,
                 OrderDate = DateTime.Now,
                 SuggestedPrice = 10.0m,
-                CarDetails = new Cars.Dtos.CarDto()
-                {
-                    BrandType = new Cars.Dtos.BrandTypeDto()
-                    {
-                        Name = "BMW"
-                    },
-                    CarType = new Cars.Dtos.CarTypeDto()
-                    {
-                        Name = "Jeep"
-                    },
-                    ProductionYear = 2010
-                }
+                MinimalCarProductionYear = 2010
             };
 
             Order order = Mapper.Map<Order>(orderDto);
+            Assert.IsNotNull(order);
+            Assert.AreEqual(orderDto.MinimalCarProductionYear, order.MinimalCarProductionYear);
 
             Console.WriteLine("Hello");
+        }
+
+        [TestMethod]
+        public void TestMappingEmptyDtoToOrder()
+        {
+
         }
 
         [TestMethod]
@@ -61,23 +58,7 @@ namespace TaxiApp.Application.Test
             Order order = new Order()
             {
                 Id = 100,
-                CarDetails = new Car()
-                {
-                    BrandType = new BrandType()
-                    {
-                        Id = 1,
-                        Name = "BMW"
-                    },
-                    BrandTypeId = 1,
-                    CarType = new CarType()
-                    {
-                        Id = 2,
-                        Name = "Jeep"
-                    },
-                    CarTypeId = 2,
-                    ProductionYear = 2010,
-                    ImageUrl = "http://car.image.com",
-                },
+                MinimalCarProductionYear = 2010,
                 ChosenBid = new Bids.Bid()
                 {
                     Id = 22,
@@ -102,7 +83,7 @@ namespace TaxiApp.Application.Test
                     Place = "Masazir"
                 },
                 OrderDate = DateTime.Now,
-                ServiceType = ServiceType.Standard,
+                ServiceType = CarType.Taxi,
                 SuggestedPrice = 10.0m
             };
 
@@ -110,6 +91,7 @@ namespace TaxiApp.Application.Test
 
             Assert.IsNotNull(dto);
             Assert.AreEqual(dto.SuggestedPrice, order.SuggestedPrice);
+            Assert.AreEqual(order.MinimalCarProductionYear, dto.MinimalCarProductionYear);
         }
     }
 }

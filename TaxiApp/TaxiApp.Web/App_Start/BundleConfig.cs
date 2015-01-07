@@ -35,6 +35,8 @@ namespace TaxiApp.Web
                         "~/Scripts/jquery-ui-1.11.2.min.js",
 
                         "~/Scripts/bootstrap.min.js",
+                        "~/Scripts/moment.min.js",
+                        "~/Scripts/bootstrap-datetimepicker.min.js",
 
                         "~/Scripts/moment-with-locales.min.js",
                         "~/Scripts/jquery.blockUI.js",

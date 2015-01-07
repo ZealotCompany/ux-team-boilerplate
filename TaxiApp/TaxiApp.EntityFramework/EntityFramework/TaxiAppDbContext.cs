@@ -17,8 +17,7 @@ namespace TaxiApp.EntityFramework
         public virtual IDbSet<Car> Cars { get; set; }
         public virtual IDbSet<Order> Orders { get; set; }
         public virtual IDbSet<Bid> Bids { get; set; }
-        public virtual IDbSet<BrandType> BrandTypes { get; set; }
-        public virtual IDbSet<CarType> CarTypes { get; set; }
+        public virtual IDbSet<CarBrand> CarBrands { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
