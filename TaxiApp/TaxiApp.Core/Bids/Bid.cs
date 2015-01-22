@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using TaxiApp.Drivers;
 
 namespace TaxiApp.Bids
 {
-    public class Bid : Entity<long>
+    public class Bid : Entity<long>, IHasCreationTime
     {
         public enum BidState 
         {
@@ -31,6 +32,8 @@ namespace TaxiApp.Bids
             Accepted
         }
 
+        public virtual DateTime CreationTime { get; set; }
+
         public virtual long? OrderId { get; set; }
         
         public virtual int? DriverId { get; set; }
@@ -41,5 +44,12 @@ namespace TaxiApp.Bids
         public virtual decimal Price { get; set; }
 
         public virtual BidState State { get; set; }
+
+        public Bid()
+        {
+            this.State = BidState.Open;
+            this.CreationTime = DateTime.Now;
+        }
+
     }
 }

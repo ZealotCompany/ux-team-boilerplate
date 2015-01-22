@@ -163,6 +163,9 @@
     <Reference Include="WebGrease">
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
     </Reference>
+    <Reference Include="zxing">
+      <HintPath>..\..\..\..\MobilImza\ZXing.Net.0.14.0.0\net4.5\zxing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Web.Infrastructure">
@@ -193,6 +196,8 @@
     <Content Include="App\Main\views\layout\layout.js" />
     <Content Include="App\Main\views\home\home.js" />
     <Content Include="App\Main\views\about\about.js" />
+    <Content Include="App\Main\views\loginqr\authQrService.js" />
+    <Content Include="App\Main\views\loginqr\loginqr.js" />
     <Content Include="App\Main\views\orders\mvOrder.js" />
     <Content Include="App\Main\views\orders\mvOrdersCtrl.js" />
     <Content Include="App\Main\views\orders\mvOrderService.js" />
@@ -363,6 +368,8 @@
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Content\less\bootstrap-datetimepicker-build.less" />
     <Content Include="Content\less\bootstrap-datetimepicker.less" />
+    <Content Include="App\Main\views\loginqr\login-qr.cshtml" />
+    <None Include="Properties\PublishProfiles\QRCodeProfile.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-er.js" />
@@ -1143,6 +1150,7 @@
     <Compile Include="App_Start\TaxiAppWebModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\QRCodeController.cs" />
     <Compile Include="Controllers\TaxiAppControllerBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1165,6 +1173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="QRImages\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TaxiApp.Application\TaxiApp.Application.csproj">

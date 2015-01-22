@@ -1,5 +1,7 @@
 ﻿using System.Reflection;
 using Abp.Modules;
+using Castle.MicroKernel.Registration;
+using TaxiApp.Orders.Dtos;
 
 namespace TaxiApp
 {

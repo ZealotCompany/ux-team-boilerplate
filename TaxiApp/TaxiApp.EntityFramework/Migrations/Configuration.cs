@@ -24,6 +24,9 @@ namespace TaxiApp.Migrations
         {
             // This method will be called every time after migrating to the latest version.
             // You can add any seed data here...
+            if (System.Diagnostics.Debugger.IsAttached == false)
+                System.Diagnostics.Debugger.Launch();
+
             var brands = new List<CarBrand>()
             {
                 new CarBrand()
@@ -128,7 +131,7 @@ namespace TaxiApp.Migrations
                     }
                 }
             };
-            context.Orders.AddOrUpdate(order => order.Id);
+            context.Orders.AddOrUpdate(order => order.Id, orders.ToArray());
 
             var bids = new List<Bid>()
             {

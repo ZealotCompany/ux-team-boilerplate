@@ -23,7 +23,7 @@ namespace TaxiApp.Orders.Dtos
         [Required]
         public LocationDto LocationTo { get; set; }
 
-        public CarType? ServiceType { get; set; }
+        public CarType ServiceType { get; set; }
 
         public User.GenderType? Gender { get; set; }
 

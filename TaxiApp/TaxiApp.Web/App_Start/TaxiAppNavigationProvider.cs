@@ -28,6 +28,20 @@ namespace TaxiApp.Web
                         url: "#/about",
                         icon: "fa fa-info"
                         )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "Order",
+                        new LocalizableString("Order", TaxiAppConsts.LocalizationSourceName),
+                        url: "#/make-order",
+                        icon: "fa fa-info"
+                        )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        "LoginQR",
+                        new LocalizableString("LoginQR", TaxiAppConsts.LocalizationSourceName),
+                        url: "#/login-qr",
+                        icon: "fa fa-info"
+                        )
                 );
         }
     }

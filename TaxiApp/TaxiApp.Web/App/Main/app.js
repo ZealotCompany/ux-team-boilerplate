@@ -33,6 +33,11 @@
                     url: '/make-order',
                     templateUrl: '/App/Main/views/orders/make-order.cshtml',
                     menu: 'Order' //Matches to name of 'About' menu in TaxiAppNavigationProvider
+                })
+                .state('login-qr', {
+                    url: '/login-qr',
+                    templateUrl: '/App/Main/views/loginqr/login-qr.cshtml',
+                    menu: 'LoginQR' //Matches to name of 'About' menu in TaxiAppNavigationProvider
                 });
         }
     ]);

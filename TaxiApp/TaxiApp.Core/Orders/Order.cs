@@ -1,4 +1,5 @@
 ﻿using Abp.Domain.Entities;
+using Abp.Domain.Entities.Auditing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ using TaxiApp.Customers;
 namespace TaxiApp.Orders
 {
     
-    public class Order : Entity<long>
+    public class Order : Entity<long>, IHasCreationTime
     {
         #region Enums
         public enum StatusType 
@@ -48,6 +49,9 @@ namespace TaxiApp.Orders
         #endregion
 
         #region Core Order members
+
+        public virtual DateTime CreationTime { get; set; }
+
         public virtual DateTime OrderDate { get; set; }
 
         public virtual Location LocationFrom { get; set; }
@@ -77,7 +81,7 @@ namespace TaxiApp.Orders
 
         #region Driver Related members
 
-        public virtual User.GenderType Gender { get; set; }
+        public virtual User.GenderType? Gender { get; set; }
 
         public virtual int? DriverExperience { get; set; }
 
@@ -107,6 +111,7 @@ namespace TaxiApp.Orders
             this.ServiceType = Cars.CarType.Taxi;
             this.Status = Order.StatusType.New;
             this.State = Order.StateType.Open;
+            this.CreationTime = DateTime.Now.ToLocalTime();
         }
     }
 }

@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201501071113194_InitialCreate.Designer.cs">
       <DependentUpon>201501071113194_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501071156392_AddCreationTimeToOrderAndBid.cs" />
+    <Compile Include="Migrations\201501071156392_AddCreationTimeToOrderAndBid.Designer.cs">
+      <DependentUpon>201501071156392_AddCreationTimeToOrderAndBid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TaxiAppDataModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201501071113194_InitialCreate.resx">
       <DependentUpon>201501071113194_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501071156392_AddCreationTimeToOrderAndBid.resx">
+      <DependentUpon>201501071156392_AddCreationTimeToOrderAndBid.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

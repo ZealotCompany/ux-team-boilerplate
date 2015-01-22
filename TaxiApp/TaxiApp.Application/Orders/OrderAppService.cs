@@ -14,14 +14,17 @@ namespace TaxiApp.Orders
     {
         private readonly IOrdersRepository _ordersRepository;
 
-        public OrderAppService(IOrdersRepository orderRepository)
+        private readonly OrderDtoMapper _mapper;
+
+        public OrderAppService(IOrdersRepository orderRepository, OrderDtoMapper mapper)
         {
             this._ordersRepository = orderRepository;
+            this._mapper = mapper;
         }
 
         public MakeOrderOutput MakeOrder(MakeOrderInput input)
         {
-            Order order = input.Order.MapTo<Order>();
+            Order order = _mapper.Map(input.Order);
             
             _ordersRepository.MakeOrder(order);
             

@@ -1,0 +1,20 @@
+﻿<div ng-controller="app.views.loginqr as vm">
+    <h1>Mobil Login</h1>
+    <div>
+        <div class="row">
+            <img ng-src={{qrImageUrl}} alt="QR Code" />
+            <input type="text" name="qrcode" value=" " ng-model="qrCodeName"/>
+            <button type="button" class="btn btn-default" ng-click="isQRAuthenticated()">Authenticate</button>
+        </div>
+        
+        <p>{{timer}}</p>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" ng-click="getQRImage()">Reset Clock</button>
+    </div>
+    <div ng-show="isAuthenticated">
+        <h1>User {{username}} Logged in Successfully</h1>
+        <h2>{{serialNumber}}</h2>
+    </div>
+    
+</div>

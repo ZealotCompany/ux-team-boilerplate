@@ -3,10 +3,64 @@
         <h1>Get Taxi</h1>
         <p>Welcome to Get Taxi App! The most easy and cheap way to get a taxi</p>
     </div>
+    <div>
+        <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+        <h4>Inline</h4>
+        <div style="display:inline-block; min-height:290px;">
+            <datepicker ng-model="dt" min-date="minDate" show-weeks="true" class="well well-sm"></datepicker>
+        </div>
+
+        <timepicker ng-model="dt" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+        <h4>Popup</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="input-group">
+                    <input type="text" class="form-control" datepicker-popup="hh:mm" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label>Format:</label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
+            </div>
+        </div>
+
+        <hr />
+        <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
+        <button type="button" class="btn btn-sm btn-default" ng-click="dt = '2009-08-24'">2009-08-24</button>
+        <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
+        <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" tooltip="After today restriction">Min date</button>
+    </div>
     <form name="orderForm" class="form-horizontal" role="form">
 
         <div class="row">
             <div class="form-group">
+                <div class="btn-group col-md-1" ng-mode="serviceType">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        {{serviceType}} <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Taxi</a></li>
+                        <li ng-click="changeServiceTo(Friend)"><a href="#">Friend</a></li>
+                        <li><a href="#">Mini Track</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
                 <div class="col-md-3">
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -37,7 +91,7 @@
                 </div>
                 <div class='col-md-3' ng-show="showOrderDateTimePicker">
                     <div class='input-group date' id='datetimepicker5'>
-                        <input type='text' class="form-control" data-date-format="YYYY/MM/DD" />
+                        <input type='text' class="form-control" data-date-format="DD/MM/YYYY" ng-model="orderDate"/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -53,7 +107,7 @@
                 </script>
                 <div class='col-md-2' ng-show="showOrderDateTimePicker">
                     <div class='input-group date' id='datetimepicker4'>
-                        <input type='text' class="form-control" />
+                        <input type='text' class="form-control" ng-model="orderTime"/>
                         <span class="input-group-addon">
                             <span class="glyphicon glyphicon-time"></span>
                         </span>
